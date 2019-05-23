@@ -12,6 +12,8 @@
         <module name="dyc-server" />
         <module name="dyc-web" />
         <module name="dyc-zuul" />
+        <module name="spring-case" />
+        <module name="springcloud-case" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +23,8 @@
       <module name="dyc-server" target="1.8" />
       <module name="dyc-web" target="1.8" />
       <module name="dyc-zuul" target="1.8" />
+      <module name="spring-case" target="1.5" />
+      <module name="springcloud-case" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
