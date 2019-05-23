@@ -3,7 +3,9 @@
 
 ----------
 
-## 1、新建Springboot 2.0.6项目 ##
+- ## 1、新建Springboot 2.0.6项目 ##
+
+
      1. 打开IDEA 2017 ->File->NEW->Module
      2. 选择SpringInitializr，按提示创建好SpringBoot项目，注意，版本为2.0.6  
         ![A-1.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-1.jpg?raw=true)  
@@ -17,7 +19,7 @@
 
 ----------
         
-## 2、创建SpringCloud服务注册中心（只需要有一个即可）  ##
+- ## 2、创建SpringCloud服务注册中心（只需要有一个即可）  ##
     
      >以前创建的demo项目为基础，改造成新的应用das-server  
      >>1.项目配置
@@ -37,7 +39,8 @@
      >>![A-7.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-7.jpg?raw=true) 
      
 ----------
-## 3、创建SpringCloud客户端 ##
+
+- ## 3、创建SpringCloud客户端 ##
 	>以前创建的demo项目为基础，改造成新的应用dyc-search
 	>>1.项目配置
      >>>  ①更改pom配置
@@ -57,7 +60,7 @@
 	 >>>![A-10.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-10.jpg?raw=true) 
 
 ----------
-## 4、SpringCloud  使用Feign实现服务消费者，微服务通信 ##  
+- ## 4、SpringCloud  使用Feign实现服务消费者，微服务通信 ##  
 	&emsp;简单说下为什么使用Feign，首先我们都知道服务消息之间的连接依赖的是HttpClient，在连接过程中依赖Ribbon去实现负载均衡，实现消息连接后，如果该微服务正处于故障或延迟的时候，若此时还不停的发送请求，最后就会因等待出现故障的依赖方响应形成任务积压，最终导致自身服务瘫痪，针对这个问题，Spring Clound Hystrix实现了断路器、线程隔离等一系列的服务保护功能，综上所述一个完整的微服务通信需要具备这三个强大的功能，而Feign整合了Spring Clound Ribbon、Spring Clound Hystrix和HttpClinet所有优点，并且除了可以提供这三个强大的功能之外，它还提供了一种声明式的web服务客户端定义方法，简介明了，所以在这里我们直接使用Feign进行开发  
     &emsp;现在我们先准备两个项目，新建SpringCloud项目dyc-calculation和改造之前的dyc-searchr项目，其中dyc-searchr需要获取dyc-calculation里的数据并把自身的数据展现出来，定义方法：searchAndCalculation，该方法分表调用了，数据搜索本身的dataList()和计算数据dyc-calculation中的dataList()方法。在这里首先把流程图画出来，方面理解下面的代码  
     ![A-11.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-11.jpg?raw=true) 
@@ -138,7 +141,7 @@ dyc-search项目结构图如下
 ![A-16.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-16.jpg?raw=true)  
 
 ----------
-## 5、创建dyc-web项目，使用thymeleaf模板引擎  ## 
+- ## 5、创建dyc-web项目，使用thymeleaf模板引擎  ## 
 以前创建的das-demo项目为基础，改造成新的应用dyc-web，下面是基础的思路图  
 ![A-17.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-17.jpg?raw=true)  
 1.项目配置  
@@ -277,7 +280,6 @@ dyc-search项目结构图如下
 ![A-19.jpg](https://github.com/dengyichao/MyPostImage/blob/master/springcloud-case/A-19.jpg?raw=true)  
 
 ----------
-
 ## 6、添加spring-cloud-zuul (网关) ##
 
 使用目的
