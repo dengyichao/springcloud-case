@@ -1,0 +1,14 @@
+server:
+  port: 1111   # 应用启动的端口号
+eureka:
+  server:
+    enable-self-preservation: false   # 测试时关闭自我保护机制，保证不可用服务及时踢出
+  instance:
+    hostname: localhost   # 应用的主机名
+  client:
+    register-with-eureka: false   # 值为false 意味着自身仅作为服务器，不作为客户端
+    fetch-registry: false         # 值为fals e 意味着无须注册自身
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/     # 指明了应用的URL
+
+

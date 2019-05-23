@@ -1,0 +1,43 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: dyc-zuul      # 项目的服务名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+
+ribbon:
+  ReadTimeout: 60000   # 请求处理的超时时间
+  ConnectTimeout: 60000 # 请求连接的超时时间
+  eureka:
+      enabled: true
+
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 5000    # 连接超时时间
+        readTimeout: 5000       # 读数据超时时间
+
+zuul:
+  host:
+    connect-timeout-millis: 50000
+    socket-timeout-millis: 50000
+  routes:
+    das-platform:
+      path: /dyc-zuul/**
+      serviceId: dyc-zuul
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

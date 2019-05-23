@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我是dyc-web</title>
+</head>
+<body>
+<p>我是dyc-web项目</p>
+<div  th:each="data:${dataList}">
+    <div >
+        <p  th:text="${data}">日期</p>
+    </div>
+</div>
+</body>
+</html>

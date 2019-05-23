@@ -1,0 +1,51 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: dyc-web
+  devtools:
+      restart:
+        enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+ribbon:
+  ReadTimeout: 60000   # 请求处理的超时时间
+  ConnectTimeout: 60000 # 请求连接的超时时间
+  eureka:
+    enabled: true
+
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 60000    # 连接超时时间
+        readTimeout: 60000       # 读数据超时时间
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeout-in-milliseconds: 30000
+
+zuul:
+  routes:
+      dyc-search:
+        path: /dyc-search/**      # 为要拦截请求的路径；
+        serviceId: dyc-search  #为要拦截请求的路径所要映射的服务 本例将所有 /das-analysis 下的请求，都转 发到 das-analysis 应用中去
+      dyc-web:
+        path: /dyc-web/**
+        serviceId: dyc-web
+      dyc-calculation:
+        path: /dyc-calculation/**
+        serviceId: dyc-calculation
+
+  host:
+      connect-timeout-millis: 60000
+      socket-timeout-millis: 60000
+

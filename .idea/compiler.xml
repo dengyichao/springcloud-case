@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="case" />
+        <module name="dyc-calculation" />
+        <module name="dyc-search" />
+        <module name="dyc-server" />
+        <module name="dyc-web" />
+        <module name="dyc-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="case" target="1.5" />
+      <module name="dyc-calculation" target="1.8" />
+      <module name="dyc-search" target="1.8" />
+      <module name="dyc-server" target="1.8" />
+      <module name="dyc-web" target="1.8" />
+      <module name="dyc-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
