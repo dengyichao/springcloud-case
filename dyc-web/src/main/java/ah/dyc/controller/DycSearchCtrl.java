@@ -24,10 +24,8 @@ public class DycSearchCtrl {
 
     @RequestMapping("/index")
     public String index(Model model){
-        System.out.println("我进来啦~");
         List<String> dataList = dycSearchClient.dataList();
         model.addAttribute("dataList",dataList);
-        System.out.println("investigation-and-analysis index  jinlai le");
         return "dyc-search/index";
     }
 
